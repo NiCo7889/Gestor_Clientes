@@ -1,7 +1,19 @@
-@startuml nombre
+@startuml GestorClientes
 
-participant Bob
-participant Alice
-Bob -> Alice : hello
+class Cliente {
+    -nombre
+    -apellidos
+    -dni
+}
+
+class GestorClientes {
+    -clientes
+    +buscarCliente(dni)
+    +insertarCliente(cliente)
+    +eliminarCliente(dni)
+    +modificarCliente(cliente)
+}
+
+Cliente <|-- GestorClientes
 
 @enduml

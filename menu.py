@@ -1,9 +1,9 @@
-import os
+import os 
 import helpers
-import database as db
+import database as db # importo database como db para poder usar sus funciones
 
 
-def iniciar():
+def iniciar(): # Función que inicia el programa y muestra el menú
     while True:
         helpers.limpiar_pantalla()
 
@@ -68,6 +68,8 @@ def iniciar():
 
         elif opcion == '6':
             print("Saliendo...\n")
-            break
+        
+        elif opcion != '1, 2, 3, 4, 5, 6':
+            print("Opción incorrecta. Introduce una opción válida.\n")
 
         input("\nPresiona ENTER para continuar...")

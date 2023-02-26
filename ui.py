@@ -1,11 +1,11 @@
 import helpers
 import database as db
 from tkinter import * # se pone el * porque se importan todas las clases de tkinter y no solo Tk y Frame 
-from tkinter import ttk
-from tkinter.messagebox import askokcancel, WARNING
+from tkinter import ttk # se importa ttk para poder usar las clases de tkinter que tienen un estilo mas moderno
+from tkinter.messagebox import askokcancel, WARNING # se importa askokcancel para poder usar la funcion que me permite preguntar si estoy seguro de borrar un cliente y WARNING para poder usar la funcion que me permite mostrar un mensaje de advertencia
 
 
-class CenterWidgetMixin:
+class CenterWidgetMixin: # creo la clase CenterWidgetMixin que me permite centrar la ventana 
     def center(self):
         self.update()
         w = self.winfo_width()
@@ -17,7 +17,7 @@ class CenterWidgetMixin:
         self.geometry(f"{w}x{h}+{x}+{y}")
 
 
-class CreateClientWindow(Toplevel, CenterWidgetMixin):
+class CreateClientWindow(Toplevel, CenterWidgetMixin): # creo la clase CreateClientWindow que hereda de Toplevel y CenterWidgetMixin que me permite crear una ventana para crear un cliente
     def __init__(self, parent):
         super().__init__(parent)
         self.title("Crear cliente")
@@ -79,7 +79,7 @@ class CreateClientWindow(Toplevel, CenterWidgetMixin):
         self.crear.config(state=NORMAL if self.validaciones == [1, 1, 1] else DISABLED)
 
 
-class EditClientWindow(Toplevel, CenterWidgetMixin):
+class EditClientWindow(Toplevel, CenterWidgetMixin): # creo la clase EditClientWindow que hereda de Toplevel y CenterWidgetMixin que me permite crear una ventana para editar un cliente 
     def __init__(self, parent):
         super().__init__(parent)
         self.title("Actualizar cliente")
@@ -145,7 +145,7 @@ class EditClientWindow(Toplevel, CenterWidgetMixin):
         self.actualizar.config(state=NORMAL if self.validaciones == [1, 1] else DISABLED)
 
 
-class MainWindow(Tk, CenterWidgetMixin):
+class MainWindow(Tk, CenterWidgetMixin): # creo la clase MainWindow que hereda de Tk y CenterWidgetMixin que me permite crear una ventana principal
     def __init__(self):
         super().__init__()
         self.title("Gestor de clientes")
@@ -208,6 +208,6 @@ class MainWindow(Tk, CenterWidgetMixin):
             EditClientWindow(self)
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": # ejecuto el programa
     app = MainWindow()
     app.mainloop()
