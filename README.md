@@ -25,5 +25,5 @@ python run.py -t
 ## Para ejecutar las pruebas unitarias
 
 ```bash
-pytest -v
+python -m pytest -v
 ```

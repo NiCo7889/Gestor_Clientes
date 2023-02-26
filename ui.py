@@ -1,6 +1,6 @@
 import helpers
 import database as db
-from tkinter import *
+from tkinter import * # se pone el * porque se importan todas las clases de tkinter y no solo Tk y Frame 
 from tkinter import ttk
 from tkinter.messagebox import askokcancel, WARNING
 

@@ -1,3 +1,7 @@
-@startuml
+@startuml nombre
+
+participant Bob
+participant Alice
 Bob -> Alice : hello
+
 @enduml

@@ -1,4 +1,3 @@
-
 import csv
 import copy
 import config
@@ -10,6 +9,7 @@ import database as db
 class TestDatabase(unittest.TestCase):
 
     def setUp(self):
+        # Se ejecuta antes de cada prueba
         db.Clientes.lista = [
             db.Cliente('15J', 'Marta', 'Pérez'),
             db.Cliente('48H', 'Manolo', 'López'),
@@ -60,3 +60,7 @@ class TestDatabase(unittest.TestCase):
         self.assertEqual(dni, '28Z')
         self.assertEqual(nombre, 'Mariana')
         self.assertEqual(apellido, 'García')
+
+
+if __name__ == '__main__':
+    unittest.main()
